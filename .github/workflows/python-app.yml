@@ -46,6 +46,6 @@ jobs:
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: CI/CD build status
         body: ${{ job.status }}
-        from: CI/CD <${{ secrets.meryemajjane3@gmail.com }}>
-        to: ${{ secrets.NOTIFICATION_EMAIL }}
+        from: CI/CD <${{ secrets.EMAIL_USERNAME}}>
+        to:meryemajjane3@gmail.com
 
