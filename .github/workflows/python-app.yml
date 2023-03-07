@@ -38,7 +38,7 @@ jobs:
       run: |
         #pytest tests.py
     - name: Send email notification
-      uses: MeryemAjjane/action-send-mail@v3
+      uses: MeryemAjjane/python-tgit@v3
       with:
         server_address: smtp.gmail.com
         server_port: 465
