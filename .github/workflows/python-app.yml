@@ -38,14 +38,14 @@ jobs:
       run: |
         #pytest tests.py
     - name: Send email notification
-      uses: dawidd6/action-send-mail@v3
+      uses: MeryemAjjane/action-send-mail@v3
       with:
         server_address: smtp.gmail.com
-        server_port: 587
+        server_port: 465
         username: ${{ secrets.EMAIL_USERNAME }}
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: CI/CD build status
         body: ${{ job.status }}
         from: CI/CD <${{ secrets.EMAIL_USERNAME}}>
-        to:meryemajjane3@gmail.com
+        to:meryem.ajjane@uit.ac.ma
 
