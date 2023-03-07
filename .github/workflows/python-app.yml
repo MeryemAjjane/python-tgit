@@ -46,6 +46,6 @@ jobs:
         password: ${{ secrets.EMAIL_PASSWORD }}
         subject: CI/CD build status
         body: ${{ job.status }}
-        from: CI/CD <${{ secrets.EMAIL_USERNAME}}>
-        to:meryem.ajjane@uit.ac.ma
+        from: CI/CD <${{ secrets.NOTIFICATION_EMAIL}}>
+        to: ${{ secrets.NOTIFICATION_EMAIL}}
 
