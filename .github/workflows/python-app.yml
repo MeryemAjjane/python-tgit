@@ -5,10 +5,12 @@ on: push
 jobs:
   tests:
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
 
     strategy:
       matrix:
         os: [windows-latest]
+        
 
     steps:
       - name: Check out Git repository
