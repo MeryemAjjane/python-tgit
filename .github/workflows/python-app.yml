@@ -30,12 +30,9 @@ jobs:
         run: |
           pip install pytest
           python -m pytest
-      - name: Lint with Pylint
+      - name: Run Pylint validation
         run: |
-      - name: Run pylint
-        run: pylint --rcfile=qualite.pylintrc mon_module.py
-      - name: Display pylint score
-        run: pylint --rcfile=qualite.pylintrc --exit-zero mon_module.py | awk -F'[/:]' '/Your code has been rated/{print $3}'
+         pylint mon_module.py
     # - name: Send email notification
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
