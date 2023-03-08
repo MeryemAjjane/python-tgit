@@ -27,7 +27,7 @@ jobs:
         run: |
           pip install pytest
           python -m pytest
-          # - name: Send email notification
+    # - name: Send email notification
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
       #  server_address: smtp.gmail.com
