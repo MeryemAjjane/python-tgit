@@ -1,12 +1,14 @@
 [MASTER]
-
 # Severity of pylint messages: I (informational), W (warning), E (error), F (fatal)
 # Note: use lowercase letters for severity, e.g. 'r' for refactor rather than 'R'
-disable=locally-disabled,
-        invalid-name,
-        missing-function-docstring,
-        missing-module-docstring
+disable=locally-disabled, missing-function-docstring, missing-module-docstring
 
+[BASIC]
+[VARIABLES]
+# Naming conventions
+good-names=i, j, k, ex, Run, _
+
+[DESIGN]
 # Maximum number of arguments for a function
 max-args=5
 
@@ -25,22 +27,9 @@ max-statements=50
 # Maximum number of parent classes for a class (useful for avoiding excessive inheritance)
 max-parents=5
 
-# Regexp for matching the names of invalid variables or modules (e.g. _myvar)
-# Note: the '$' at the end of the pattern matches the end of the line
-invalid-name=^_|[0-9]+$
-
 [MESSAGES CONTROL]
-
 # Error messages to disable
-disable=print-statement,
-        unpacking-non-sequence
+disable=C0301, C0103
 
 # Warning messages to enable
-enable=assignment-from-none,
-        duplicate-except,
-        line-too-long
-
-[BASIC]
-
-# Naming conventions
-good-names=i,j,k,ex,Run,_
+enable=W0107, W0702
