@@ -37,15 +37,15 @@ jobs:
     - name: Test with pytest
       run: |
         #pytest tests.py
-    - name: Send email notification
-      uses: MeryemAjjane/python-tgit@v3
-      with:
-        server_address: smtp.gmail.com
-        server_port: 465
-        username: ${{ secrets.EMAIL_USERNAME }}
-        password: ${{ secrets.EMAIL_PASSWORD }}
-        subject: CI/CD build status
-        body: ${{ job.status }}
-        from: CI/CD <${{ secrets.NOTIFICATION_EMAIL}}>
-        to: ${{ secrets.NOTIFICATION_EMAIL}}
+   # - name: Send email notification
+    #  uses: MeryemAjjane/python-tgit@v3
+     # with:
+      #  server_address: smtp.gmail.com
+       # server_port: 465
+        #username: ${{ secrets.EMAIL_USERNAME }}
+        #password: ${{ secrets.EMAIL_PASSWORD }}
+        #subject: CI/CD build status
+        #body: ${{ job.status }}
+        #from: CI/CD <${{ secrets.NOTIFICATION_EMAIL}}>
+        #to: ${{ secrets.NOTIFICATION_EMAIL}}
 
