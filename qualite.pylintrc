@@ -10,7 +10,7 @@ good-names==i, j, k, ex, Run,
 
 [DESIGN]
 # Maximum number of arguments for a function
-max-args==5
+max-args 5
 
 # Maximum number of local variables for a function
 max-locals==10
