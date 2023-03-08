@@ -29,7 +29,7 @@ max-parents==5
 
 [MESSAGES CONTROL]
 # Error messages to disable
-disable==C0301, C0103
+disable=C0301, C0103
 
 # Warning messages to enable
 enable=W0107, W0702
