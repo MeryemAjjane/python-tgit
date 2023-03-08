@@ -3,10 +3,10 @@
 # Note: use lowercase letters for severity, e.g. 'r' for refactor rather than 'R'
 disable=locally-disabled, missing-function-docstring, missing-module-docstring
 
-[BASIC]
-[VARIABLES]
+#[BASIC]
+#[VARIABLES]
 # Naming conventions
-good-names=i, j, k, ex, Run,
+#good-names=i, j, k, ex, Run,
 
 [DESIGN]
 # Maximum number of arguments for a function
