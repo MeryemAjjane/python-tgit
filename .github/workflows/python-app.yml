@@ -33,6 +33,13 @@ jobs:
       - name: Run Pylint validation
         run: |
          pylint mon_module.py
+      - name: Slack notification on success
+        if: success()
+        uses: rtCamp/action-slack-notify@v2.3.0
+        with:
+          status: ${{ job.status }}
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK }}
+          message: "Build successful for ${{ github.repository }}#${{ github.run_number }}!"
     # - name: Send email notification
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
