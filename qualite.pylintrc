@@ -6,7 +6,7 @@ disable=locally-disabled, missing-function-docstring, missing-module-docstring
 [BASIC]
 [VARIABLES]
 # Naming conventions
-good-names=i, j, k, ex, Run
+good-names=i, j, k, ex, Run,
 
 [DESIGN]
 # Maximum number of arguments for a function
