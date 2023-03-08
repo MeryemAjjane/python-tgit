@@ -10,26 +10,26 @@ good-names==i, j, k, ex, Run,
 
 [DESIGN]
 # Maximum number of arguments for a function
-max-args=5
+max-args==5
 
 # Maximum number of local variables for a function
-max-locals=10
+max-locals==10
 
 # Maximum number of return statements for a function
-max-returns=3
+max-returns==3
 
 # Maximum number of branches for a function
-max-branches=10
+max-branches==10
 
 # Maximum number of statements in a function
-max-statements=50
+max-statements==50
 
 # Maximum number of parent classes for a class (useful for avoiding excessive inheritance)
-max-parents=5
+max-parents==5
 
 [MESSAGES CONTROL]
 # Error messages to disable
-disable=C0301, C0103
+disable==C0301, C0103
 
 # Warning messages to enable
 enable=W0107, W0702
