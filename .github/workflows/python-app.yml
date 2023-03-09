@@ -42,8 +42,8 @@ jobs:
             GITHUB_SHA: ${{ github.sha }}
             GITHUB_REF: ${{ github.ref }}
             GITHUB_ACTOR: ${{ github.actor }}
-        run: |
-            python notify_slack.py
+        #run: |
+            #python notify_slack.py
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
