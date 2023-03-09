@@ -35,13 +35,13 @@ jobs:
         run: |
          pylint mon_module.py
          - name: Notify Slack
-          if: ${{ always() }}
-          env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
-            GITHUB_REPOSITORY: ${{ github.repository }}
-            GITHUB_SHA: ${{ github.sha }}
-            GITHUB_REF: ${{ github.ref }}
-            GITHUB_ACTOR: ${{ github.actor }}
+           if: ${{ always() }}
+           env:
+              SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+              GITHUB_REPOSITORY: ${{ github.repository }}
+              GITHUB_SHA: ${{ github.sha }}
+              GITHUB_REF: ${{ github.ref }}
+              GITHUB_ACTOR: ${{ github.actor }}
           run: |
             python notify_slack.py
 
