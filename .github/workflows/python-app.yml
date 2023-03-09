@@ -25,6 +25,7 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pylint
+          pip install slack-sdk
 
       - name: Run tests
         run: |
@@ -33,13 +34,16 @@ jobs:
       - name: Run Pylint validation
         run: |
          pylint mon_module.py
-      - name: Slack notification
-        uses: actions/slack@v1
-        with:
-          status: ${{ job.status }}
-          steps: ${{ toJSON(steps) }}
-          channel: 'test'
-        if: always()
+         - name: Notify Slack
+          if: ${{ always() }}
+          env:
+            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            GITHUB_REPOSITORY: ${{ github.repository }}
+            GITHUB_SHA: ${{ github.sha }}
+            GITHUB_REF: ${{ github.ref }}
+            GITHUB_ACTOR: ${{ github.actor }}
+          run: |
+            python notify_slack.py
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
