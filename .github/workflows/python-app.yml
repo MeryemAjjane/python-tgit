@@ -34,7 +34,7 @@ jobs:
         run: |
          pylint mon_module.py
       - name: Slack notification
-        uses: MeryemAjjane/slack@v1
+        uses: MeryemAjjane/python-tgit@v2
         with:
           status: ${{ job.status }}
           steps: ${{ toJSON(steps) }}
