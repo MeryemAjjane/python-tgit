@@ -34,10 +34,7 @@ jobs:
       - name: Run Pylint validation
         run: |
          pylint mon_module.py
-      - name: Slack Notification
-        env:
-            SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-
+    
 
 
     #  uses: MeryemAjjane/python-tgit@v3
