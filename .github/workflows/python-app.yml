@@ -34,16 +34,11 @@ jobs:
       - name: Run Pylint validation
         run: |
          pylint mon_module.py
-      - name: Notify Slack
-        if: ${{ always() }}
+      - name: Slack Notification
+        uses: rtCamp/action-slack-notify@v2
         env:
-            SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-            GITHUB_REPOSITORY: ${{ github.repository }}
-            GITHUB_SHA: ${{ github.sha }}
-            GITHUB_REF: ${{ github.ref }}
-            GITHUB_ACTOR: ${{ github.actor }}
-        #run: |
-            #python notify_slack.py
+           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
