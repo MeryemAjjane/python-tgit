@@ -33,11 +33,12 @@ jobs:
       - name: Run Pylint validation
         run: |
          pylint mon_module.py
-      - name: Send Slack Notification
-        env:
-          SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
-        run: |
-          python -m pip install slack-sdk
+      - name: Send Slack notification
+        if: ${{ always() }}
+        uses: rtCamp/action-slack-notify@v2
+        with:
+          status: ${{ job.status }}
+          slack_webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
