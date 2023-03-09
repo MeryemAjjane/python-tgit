@@ -9,7 +9,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubunto-latest]
+        os: [windows-latest]
         
 
     steps:
@@ -35,7 +35,6 @@ jobs:
         run: |
          pylint mon_module.py
       - name: Slack Notification
-        uses: rtCamp/action-slack-notify@v2
         env:
             SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
 
