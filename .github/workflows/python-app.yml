@@ -37,7 +37,7 @@ jobs:
       - name: Notify Slack
         if: ${{ always() }}
         env:
-            SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+            SLACK_BOT_TOKEN: ${{ secrets.SLACK_BOT_TOKEN }}
             GITHUB_REPOSITORY: ${{ github.repository }}
             GITHUB_SHA: ${{ github.sha }}
             GITHUB_REF: ${{ github.ref }}
