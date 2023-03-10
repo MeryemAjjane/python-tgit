@@ -1,6 +1,8 @@
-def add(a,b):
+def add(a, b):
     c = a + b
     print("somme", c)
-def soustraire(a,b):
+
+
+def sous(a, b):
     d = a - b
     print("sous", d)
