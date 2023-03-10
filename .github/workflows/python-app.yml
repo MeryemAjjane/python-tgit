@@ -41,10 +41,7 @@ jobs:
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           message: |
-             ${{
-              success: 'réussi',
-              failure: 'échoué'
-              }[${{ job.status }}}]
+            [${{ job.status }}}]
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
