@@ -33,7 +33,7 @@ jobs:
           python -m pytest
       - name: Run Pylint validation
         run: |
-         pylint mon_module.py
+         pylint $(git ls-files '*.py')
       - uses: 8398a7/action-slack@v3
         with:
           status: ${{ job.status }}
