@@ -35,7 +35,13 @@ jobs:
         run: |
          pylint mon_module.py
     
-
+      - name: Send Slack notification
+        if: ${{ always() }}
+        uses: actions/checkout@v1
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          message: |
+            [${{ job.status }}}]
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
