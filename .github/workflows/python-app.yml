@@ -41,10 +41,10 @@ jobs:
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           message: |
-            La construction a ${{
+             ${{
               success: 'réussi',
               failure: 'échoué'
-            }[${{ job.status }}}]
+              }[${{ job.status }}}]
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
