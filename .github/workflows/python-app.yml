@@ -34,14 +34,20 @@ jobs:
       - name: Run Pylint validation
         run: |
          pylint mon_module.py
-    
-      - name: Send Slack notification
-        if: ${{ always() }}
-        uses: actions/checkout@v1
+      - uses: 8398a7/action-slack@v3
         with:
-          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
-          message: |
-            [${{ job.status }}}]
+          status: ${{ job.status }}
+          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+          text: 'CICD ongoing...'
+        env:
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
+      #- name: Send Slack notification
+       # if: ${{ always() }}
+       # uses: actions/checkout@v1
+        #with:
+         # webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+         # message: |
+           # [${{ job.status }}}]
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
