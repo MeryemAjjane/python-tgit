@@ -37,7 +37,7 @@ jobs:
     
       - name: Send Slack notification
         if: ${{ always() }}
-        uses: MeryemAjjane/python-tgit@master
+        uses: actions/checkout@v1
         with:
           webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
           message: |
