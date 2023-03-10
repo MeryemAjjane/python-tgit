@@ -1,13 +1,13 @@
 """operation de base"""
 
 
-def add(a, b):
+def add(v_a, v_b):
     """addition"""
-    c = a + b
-    print("somme", c)
+    v_c = v_a + v_b
+    print("somme", v_c)
 
 
-def sous(a, b):
+def sous(v_a, v_b):
     """subtraction"""
-    d = a - b
-    print("sous", d)
+    v_d = v_a - v_b
+    print("sous", v_d)
