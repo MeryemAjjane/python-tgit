@@ -5,7 +5,7 @@ on: push
 jobs:
   tests:
     runs-on: ${{ matrix.os }}
-    timeout-minutes: 10
+    timeout-minutes: 7
 
     strategy:
       matrix:
@@ -38,7 +38,7 @@ jobs:
         with:
           status: ${{ job.status }}
           fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-          text: 'CICD ongoing...'
+          text: 'CICD réussite'
         env:
           SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
       #- name: Send Slack notification
