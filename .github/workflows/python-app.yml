@@ -25,18 +25,18 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install pylint
+          pip install slack-sdk
 
       - name: Run tests
         run: |
           pip install pytest
           python -m pytest
-      - name: Lint with Pylint
+      - name: Run Pylint validation
         run: |
-      - name: Run pylint
-        run: pylint --rcfile=qualite.pylintrc mon_module.py
-      - name: Display pylint score
-        run: pylint --rcfile=qualite.pylintrc --exit-zero mon_module.py | awk -F'[/:]' '/Your code has been rated/{print $3}'
-    # - name: Send email notification
+         pylint mon_module.py
+    
+
+
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
       #  server_address: smtp.gmail.com
