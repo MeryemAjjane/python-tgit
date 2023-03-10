@@ -35,7 +35,16 @@ jobs:
         run: |
          pylint mon_module.py
     
-
+      - name: Send Slack notification
+        if: ${{ always() }}
+        uses: appleboy/slack-action@master
+        with:
+          webhook: ${{ secrets.SLACK_WEBHOOK_URL }}
+          message: |
+            La construction a ${{
+              success: 'réussi',
+              failure: 'échoué'
+            }[${{ job.status }}}]
 
     #  uses: MeryemAjjane/python-tgit@v3
      # with:
